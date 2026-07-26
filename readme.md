@@ -1,5 +1,5 @@
 # E-Commerce Customer Retention & Delivery Performance Analysis
-🔗 **[Live Interactive Dashboard]([https://your-app-name.streamlit.app](https://olist-customer-retention-delivery-performance-analysis-xvvu9uw.streamlit.app/))
+🔗 **[Live Interactive Dashboard](https://olist-customer-retention-delivery-performance-analysis-xvvu9uw.streamlit.app/)
 
 An end-to-end data analysis project built on the [Olist Brazilian E-Commerce Public Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (Kaggle). 
 ## Business Problem
