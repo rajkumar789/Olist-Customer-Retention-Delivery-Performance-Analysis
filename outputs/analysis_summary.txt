@@ -1,0 +1,110 @@
+======================================================================
+Dataset loaded
+======================================================================
+ customers: (99441, 5)
+ orders: (99441, 8)
+ order_items: (112650, 7)
+ payments: (103886, 5)
+ reviews: (99224, 7)
+ products: (32951, 9)
+
+Dropped 1241 canceled/unavailable orders(98200 remain)
+
+======================================================================
+Clean and Merged Table
+======================================================================
+  Final shape: (98197, 25)
+  Date range: 2016-09-04 21:15:19 to   2018-09-03 09:06:57
+  Missing review scores: 732 (0.7%)
+
+======================================================================
+Exploratory Data Analysis
+======================================================================
+  Total revenue in dataset: R$15,735,285.95
+  Average order value: R$160.24
+  Average review score: 4.12 / 5
+  Top category: bed_bath_table(9293)
+
+======================================================================
+RFM Customer Segmentation
+======================================================================
+  Total unique customers: 94,981
+  Repeat customers (2+ orders): 2,887 ( 3.0%)
+  one-time cutomers: 92,094(97.0%)
+
+ Segment summary:
+                 customers  total_revenue  avg_recency_days
+segment                                                    
+Needs Attention      25571     3803787.83        349.584099
+Loyal Customers      27728     3722582.62        149.318631
+At Risk              13420     3284508.32        399.288897
+New / Promising      15239     2496629.76         95.926111
+Champions             6599     2069272.02         96.314745
+Lost                  6424      358505.40        402.483655
+
+ saved full segmented customer list to outputs/rfm_customer_segments.csv
+
+  Revenue sitting in 'At Risk' + "Can't Lose Them" segments: R$3,284,508.32
+
+======================================================================
+Cohort Retntion Analysis
+
+======================================================================
+  Average month-1 retention across all cohort:5.2%
+
+======================================================================
+STEP 6: DELIVERY PERFORMANCE VS. REVIEW SCORE
+======================================================================
+  On-time orders: 88,163, average review score: 4.29
+  Late orders:    7,661, average review score: 2.57
+
+ Welch's t-test: t= 89.41, p-value = 0.00e+00
+    => Statistically significant: late delivery Is associated withlower review scores
+
+ worst 5 states by late-delivery rate (min. 30 orders):
+                orders  late_rate  avg_review    revenue
+customer_state                                          
+AL                 394   0.233503    3.857868   92609.56
+MA                 712   0.192416    3.832865  146908.67
+PI                 471   0.159236    3.993631  104220.04
+CE                1273   0.152396    3.944226  265256.35
+SE                 334   0.149701    3.907186   69140.25
+
+  Worst 5 products categories by late-delivery rate(min. 30 orders):
+                                   orders  late_rate  avg_review   revenue
+product_category_name_english                                             
+furniture_mattress_and_upholstery      37   0.135135    3.891892   5904.75
+fashion_underwear_beach               116    0.12931    4.008621  11095.02
+audio                                 341   0.129032    3.844575  56498.81
+books_technical                       254   0.110236    4.425197  22958.82
+home_confort                          368   0.103261    3.918478  66489.35
+
+======================================================================
+FINDINGS SUMMARY
+======================================================================
+
+  1. RETENTION: A large share of customers never come back after their
+     first order. This is the single biggest lever available - see the
+     cohort heatmap and RFM segment table for exactly who to target.
+
+  2. VALUE AT RISK: R$3,284,508.32 in historical revenue sits with
+     customers in the 'At Risk' and "Can't Lose Them" segments - customers
+     who have spent real money before but have gone quiet. A win-back
+     campaign aimed at these two segments specifically (not a blanket email
+     to everyone) is the highest-leverage next action.
+
+  3. DELIVERY IMPACT ON SATISFACTION: On-time orders average a review score
+     of 4.29 vs. 2.57
+     for late orders (p = 0.00e+00, statistically significant at the 5% level).
+     See outputs/delivery_vs_review_score.png and the worst-performing
+     states/categories printed above for where delivery issues concentrate.
+
+  Recommended next steps for the business:
+     a) Launch a targeted win-back campaign for the "At Risk" / "Can't Lose
+        Them" RFM segments (list exported to rfm_customer_segments.csv).
+     b) Investigate logistics/carrier performance in the worst-performing
+        states identified above; even a 10 percentage-point improvement in
+        on-time rate there should measurably lift review scores.
+     c) Introduce a post-purchase engagement touchpoint (email or loyalty
+        incentive) within the first 30 days, since retention drops sharply
+        after month 1 in nearly every cohort.

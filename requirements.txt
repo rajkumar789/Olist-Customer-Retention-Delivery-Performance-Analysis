@@ -1,0 +1,6 @@
+pandas>=2.0
+matplotlib
+seaborn
+scipy
+streamlit>=1.40
+plotly>=5.0,<6.0
