@@ -1,10 +1,6 @@
 """
 Interactive Dashboard: E-Commerce Customer Retention & Delivery Performance
-=============================================================================
-A Streamlit dashboard built on top of the outputs produced by
-ecommerce_analysis.py. This is the piece meant to be deployed live (Streamlit
-Community Cloud is free) so a recruiter can click a link and interact with
-your analysis in 30 seconds, instead of reading a static README.
+
 
 Run locally with:
     streamlit run dashboard/app.py
