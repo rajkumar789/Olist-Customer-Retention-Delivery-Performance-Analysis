@@ -1,7 +1,7 @@
 
 # E-Commerce Customer Retention & Delivery Performance Analysis
 
-[![Live Interactive Dashboard](https://img.shields.io/badge/Streamlit-Live%20Dashboard-FF4B4B?style=for-the-badge&logo=streamlit)]([https://github.com/rajkumar789/Olist-Customer-Retention-Delivery-Performance-Analysis](https://olist-customer-retention-delivery-performance-analysis-xvvu9uw.streamlit.app/))
+[![Live Interactive Dashboard](https://img.shields.io/badge/Streamlit-Live%20Dashboard-FF4B4B?style=for-the-badge&logo=streamlit)](https://olist-customer-retention-delivery-performance-analysis-xvvu9uw.streamlit.app/)
 
 An end-to-end data analysis project built on the [Olist Brazilian E-Commerce Public Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) from Kaggle.
 
