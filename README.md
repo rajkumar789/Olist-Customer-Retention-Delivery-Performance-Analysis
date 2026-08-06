@@ -1,16 +1,39 @@
 # E-Commerce Customer Retention & Delivery Performance Analysis
 🔗 **[Live Interactive Dashboard](https://olist-customer-retention-delivery-performance-analysis-xvvu9uw.streamlit.app/)
 
-An end-to-end data analysis project built on the [Olist Brazilian E-Commerce Public Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (Kaggle). 
-## Business Problem
+# E-Commerce Customer Retention & Delivery Performance Analysis
 
-Olist's leadership suspects that customer retention is weak and that delivery
-delays may be hurting customer satisfaction, but there is no analysis
-quantifying either issue. This project measures repeat-purchase behavior,
-segments customers by value and risk, and tests whether delivery performance
-is actually driving poor reviews and churn — in order to recommend where the
-business should focus retention and logistics investment.
-The project answers two core business questions:
+[![Live Interactive Dashboard](https://img.shields.io/badge/Streamlit-Live%20Dashboard-FF4B4B?style=for-the-badge&logo=streamlit)](https://github.com/rajkumar789/Olist-Customer-Retention-Delivery-Performance-Analysis)
+
+An end-to-end data analysis project built on the [Olist Brazilian E-Commerce Public Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) from Kaggle.
+
+---
+
+## Motivation
+
+Olist's leadership suspects that customer retention is weak and that logistics issues (such as delivery delays) are severely hurting customer satisfaction. However, without empirical data quantifying these issues, it is difficult to allocate capital efficiently between customer acquisition, win-back campaigns, and supply chain improvements.
+
+This project was built to address two core business problems:
+1. **Quantifying the Retention Crisis:** Evaluate repeat-purchase behavior using Cohort Analysis and RFM (Recency, Frequency, Monetary) Segmentation to determine who is leaving and quantify the exact revenue at risk.
+2. **Measuring Logistics Impact on Satisfaction:** Perform statistical hypothesis testing to confirm whether late deliveries directly drive down review scores, and identify specific geographic regions (states) and product categories that underperform.
+
+---
+
+## Quick Start
+
+Follow these steps to get the project running locally on your machine:
+
+```bash
+# 1. Clone the repository
+git clone [https://github.com/rajkumar789/Olist-Customer-Retention-Delivery-Performance-Analysis.git](https://github.com/rajkumar789/Olist-Customer-Retention-Delivery-Performance-Analysis.git)
+cd Olist-Customer-Retention-Delivery-Performance-Analysis
+
+# 2. Set up environment and install dependencies
+pip install -r requirements.txt
+
+# 3. Add data files
+# Download the dataset from Kaggle: [https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+# Extract all raw CSV files into the data/ directory.
 
 1. **Is customer retention actually a problem?** — Cohort analysis + RFM segmentation to quantify who is leaving and how much revenue is at risk.
 2. **Does delivery performance drive satisfaction?** — Statistical testing to confirm whether late deliveries are associated with lower review scores, and which states/categories are the worst offenders.
