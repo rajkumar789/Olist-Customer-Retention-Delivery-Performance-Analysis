@@ -40,6 +40,37 @@ streamlit run dashboard/streamlit_app.py
 ```
 
 ---
+ 
+## Usage
+ 
+### Run the full analysis
+ 
+```bash
+python ecommerce_analysis.py
+```
+ 
+This reads the raw CSVs from `data/`, runs the cohort analysis, RFM segmentation, and delivery/review hypothesis testing, then writes everything to `outputs/`:
+ 
+- Charts (`.png`) for retention, RFM segments, delivery vs. review score, order volume, review distribution, and top categories
+- `rfm_customer_segments.csv` — every customer with their R/F/M scores and segment label
+- `analysis_summary.txt` — a plain-text summary of all key metrics and test results
+### Explore the interactive dashboard
+ 
+```bash
+streamlit run dashboard/streamlit_app.py
+```
+ 
+This launches a local Streamlit app (or use the [hosted version](https://olist-customer-retention-delivery-performance-analysis-xvvu9uw.streamlit.app/)) where you can:
+ 
+- Filter by customer state, product category, and date range
+- Drill into individual RFM segments and their revenue contribution
+- Compare on-time vs. late delivery review score distributions interactively
+- Export filtered views as CSV
+### Working with the outputs directly
+ 
+If you just want the numbers without re-running anything, the pre-generated files in `outputs/` (see the [Outputs](#outputs) table below) can be opened directly — `rfm_customer_segments.csv` in any spreadsheet tool, and the `.png` charts in any image viewer.
+ 
+---
 
 ## Project Structure
 
