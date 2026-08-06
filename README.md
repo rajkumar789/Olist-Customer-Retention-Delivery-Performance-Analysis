@@ -5,8 +5,6 @@
 
 An end-to-end data analysis project built on the [Olist Brazilian E-Commerce Public Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) from Kaggle.
 
-An end-to-end data analysis project built on the [Olist Brazilian E-Commerce Public Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) from Kaggle.
-
 ---
 
 ## Motivation
