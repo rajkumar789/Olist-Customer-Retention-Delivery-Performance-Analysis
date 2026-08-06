@@ -225,6 +225,24 @@ The **1.72-point drop** in review score for late orders is statistically signifi
 | Plotly 5.24 | Interactive charts in the dashboard |
 
 ---
+ 
+## Contributing
+ 
+Contributions are welcome — whether that's fixing a bug, improving the analysis, adding new visualizations, or extending the dashboard.
+ 
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature-name`
+3. Make your changes and test locally (`python ecommerce_analysis.py` should run cleanly end-to-end)
+4. Commit your changes: `git commit -m "Add: brief description of change"`
+5. Push to your fork: `git push origin feature/your-feature-name`
+6. Open a pull request describing what you changed and why
+A few guidelines:
+ 
+- Keep new outputs consistent with the existing style in `outputs/` (naming, chart formatting)
+- If you add a new metric or finding, update the relevant table in [Key Findings](#key-findings)
+- For dashboard changes, confirm the app still runs with `streamlit run dashboard/streamlit_app.py`
+- Open an issue first for larger changes (new data sources, restructuring the analysis pipeline) so the approach can be discussed before you invest the time
+---
 
 ## Data Source
 
