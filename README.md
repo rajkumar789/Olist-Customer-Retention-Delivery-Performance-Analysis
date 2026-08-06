@@ -1,4 +1,3 @@
-
 # E-Commerce Customer Retention & Delivery Performance Analysis
 
 [![Live Interactive Dashboard](https://img.shields.io/badge/Streamlit-Live%20Dashboard-FF4B4B?style=for-the-badge&logo=streamlit)](https://olist-customer-retention-delivery-performance-analysis-xvvu9uw.streamlit.app/)
@@ -9,34 +8,36 @@ An end-to-end data analysis project built on the [Olist Brazilian E-Commerce Pub
 
 ## Motivation
 
-Olist's leadership suspects that customer retention is weak and that logistics issues (such as delivery delays) are severely hurting customer satisfaction. However, without empirical data quantifying these issues, it is difficult to allocate capital efficiently between customer acquisition, win-back campaigns, and supply chain improvements.
+Olist's leadership suspects that customer retention is weak and that logistics issues — such as delivery delays — are severely hurting customer satisfaction. Without empirical data quantifying these issues, it's difficult to allocate capital efficiently between customer acquisition, win-back campaigns, and supply chain improvements.
 
-This project was built to address two core business problems:
-1. **Quantifying the Retention Crisis:** Evaluate repeat-purchase behavior using Cohort Analysis and RFM (Recency, Frequency, Monetary) Segmentation to determine who is leaving and quantify the exact revenue at risk.
-2. **Measuring Logistics Impact on Satisfaction:** Perform statistical hypothesis testing to confirm whether late deliveries directly drive down review scores, and identify specific geographic regions (states) and product categories that underperform.
+This project answers two core business questions:
+
+1. **Is customer retention actually a problem?** Cohort analysis and RFM (Recency, Frequency, Monetary) segmentation to quantify who is leaving and how much revenue is at risk.
+2. **Does delivery performance drive satisfaction?** Statistical hypothesis testing to confirm whether late deliveries are associated with lower review scores, and which states and product categories are the worst offenders.
 
 ---
 
 ## Quick Start
 
-Follow these steps to get the project running locally on your machine:
-
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/rajkumar789/Olist-Customer-Retention-Delivery-Performance-Analysis.git](https://github.com/rajkumar789/Olist-Customer-Retention-Delivery-Performance-Analysis.git)
+git clone https://github.com/rajkumar789/Olist-Customer-Retention-Delivery-Performance-Analysis.git
 cd Olist-Customer-Retention-Delivery-Performance-Analysis
 
-# 2. Set up environment and install dependencies
+# 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Add data files
-# Download the dataset from Kaggle: [https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
-# Extract all raw CSV files into the data/ directory.
+# 3. Add the data
+# Download the dataset from Kaggle:
+# https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+# Extract all raw CSV files into the data/ directory
 
-1. **Is customer retention actually a problem?** — Cohort analysis + RFM segmentation to quantify who is leaving and how much revenue is at risk.
-2. **Does delivery performance drive satisfaction?** — Statistical testing to confirm whether late deliveries are associated with lower review scores, and which states/categories are the worst offenders.
+# 4. Run the analysis
+python ecommerce_analysis.py
 
----
+# 5. Launch the interactive dashboard
+streamlit run dashboard/streamlit_app.py
+```
 
 ---
 
@@ -59,9 +60,7 @@ pip install -r requirements.txt
 ├── ecommerce_analysis.py          # Main analysis script
 ├── requirements.txt
 └── README.md
-
----
-
+```
 
 ---
 
@@ -106,11 +105,11 @@ pip install -r requirements.txt
 | Average month-1 retention (cohort) | 5.2% |
 | Average recency (days since last order) | 243.4 days |
 
-Retention collapses after the first purchase across virtually every monthly cohort. The cohort heatmap (`outputs/cohort_retention_heatmap.png`) shows month-1 retention rarely exceeds 5–6%, and drops to near zero by month 3.
+Retention collapses after the first purchase across virtually every monthly cohort. The cohort heatmap (`outputs/cohort_retention_heatmap.png`) shows month-1 retention rarely exceeds 5–6%, dropping to near zero by month 3.
 
 ### 3. RFM Customer Segmentation
 
-Every customer is scored on **Recency**, **Frequency**, and **Monetary Value** (each 1–5), then assigned to a named segment.
+Every customer is scored on **Recency**, **Frequency**, and **Monetary Value** (each 1–5) and assigned to a named segment.
 
 | Segment | Customers | % of Base | Total Revenue | % of Revenue | Avg Spend | Avg Recency (days) |
 |---|---|---|---|---|---|---|
@@ -121,7 +120,7 @@ Every customer is scored on **Recency**, **Frequency**, and **Monetary Value** (
 | Champions | 6,599 | 6.9% | R$2,069,272 | 13.2% | R$313.57 | 96 |
 | Lost | 6,424 | 6.8% | R$358,505 | 2.3% | R$55.81 | 402 |
 
-**Revenue at risk** (customers in "At Risk" who have gone quiet): **R$3,284,508 — 20.9% of all historical revenue.**
+**Revenue at risk:** customers in the "At Risk" segment who have gone quiet represent **R$3,284,508 — 20.9% of all historical revenue.**
 
 Champions and At Risk customers have the highest average spend (R$313 and R$245 respectively), making win-back campaigns for these two segments the single highest-leverage action available.
 
@@ -132,7 +131,7 @@ Champions and At Risk customers have the highest average spend (R$313 and R$245 
 | On-time deliveries | 88,163 (92.0%) | 4.29 / 5 |
 | Late deliveries | 7,661 (8.0%) | 2.57 / 5 |
 
-The **1.72-point drop** in review score for late orders is statistically significant (Welch's t-test: t = 89.41, p ≈ 0.00). Late delivery is not noise — it is a measurable, material driver of customer dissatisfaction.
+The **1.72-point drop** in review score for late orders is statistically significant (Welch's t-test: t = 89.41, p ≈ 0.00). Late delivery is not noise — it's a measurable, material driver of customer dissatisfaction.
 
 #### Worst States by Late-Delivery Rate (min. 30 orders)
 
@@ -198,6 +197,6 @@ The **1.72-point drop** in review score for late orders is statistically signifi
 
 ## Data Source
 
-> Olist Brazilian E-Commerce Public Dataset  
-> https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce  
+> Olist Brazilian E-Commerce Public Dataset
+> https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 > Licensed under CC BY-NC-SA 4.0
